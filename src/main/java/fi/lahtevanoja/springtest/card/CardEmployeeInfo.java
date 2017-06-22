@@ -3,49 +3,50 @@ package fi.lahtevanoja.springtest.card;
 import fi.lahtevanoja.springtest.models.Employee;
 
 public class CardEmployeeInfo {
-    private String firstName;
 
-    private String lastName;
+  private String firstName;
 
-    private String title;
+  private String lastName;
 
-    CardEmployeeInfo(String firstName, String lastName, String title) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.title = title;
-    }
+  private String title;
 
-    CardEmployeeInfo(Employee employee) {
-        this.firstName = employee.getFirstName();
-        this.lastName = employee.getLastName();
-        this.title = employee.getTitle();
-    }
+  CardEmployeeInfo(String firstName, String lastName, String title) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.title = title;
+  }
 
-    CardEmployeeInfo() {
-        this("", "", "");
-    }
+  CardEmployeeInfo(Employee employee) {
+    this.firstName = employee.getFirstName();
+    this.lastName = employee.getLastName();
+    this.title = employee.getTitle();
+  }
 
-    public String getFirstName() {
-        return firstName;
-    }
+  CardEmployeeInfo() {
+    this("", "", "");
+  }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
+  public String getFirstName() {
+    return firstName;
+  }
 
-    public String getLastName() {
-        return lastName;
-    }
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+  public String getLastName() {
+    return lastName;
+  }
 
-    public String getTitle() {
-        return title;
-    }
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
+  }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+  public String getTitle() {
+    return title;
+  }
+
+  public void setTitle(String title) {
+    this.title = title;
+  }
 }

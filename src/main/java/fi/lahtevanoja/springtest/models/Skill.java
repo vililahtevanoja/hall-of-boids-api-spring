@@ -1,10 +1,7 @@
 package fi.lahtevanoja.springtest.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-
 import java.io.Serializable;
-import java.sql.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,46 +12,48 @@ import javax.persistence.ManyToOne;
 
 @Entity
 public class Skill implements Serializable {
-    private static final long serialVersionUID = 6956922755128545153L;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+  private static final long serialVersionUID = 6956922755128545153L;
 
-    @ManyToOne
-    @JoinColumn(name = "employee_id")
-    @JsonBackReference
-    private Employee employee;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private long id;
 
-    @Column
-    private String name;
+  @ManyToOne
+  @JoinColumn(name = "employee_id")
+  @JsonBackReference
+  private Employee employee;
 
-    @Column
-    private int rating;
+  @Column
+  private String name;
 
-    public Employee getEmployee() {
-        return employee;
-    }
+  @Column
+  private int rating;
 
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
-    }
+  public Employee getEmployee() {
+    return employee;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public void setEmployee(Employee employee) {
+    this.employee = employee;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public int getRating() {
-        return rating;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public void setRating(int rating) {
-        this.rating = rating;
-    }
+  public int getRating() {
+    return rating;
+  }
 
-    protected Skill() {}
+  public void setRating(int rating) {
+    this.rating = rating;
+  }
+
+  protected Skill() {
+  }
 }

@@ -1,10 +1,8 @@
 package fi.lahtevanoja.springtest.models;
+
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,97 +12,99 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Employee implements Serializable {
-    private static final long serialVersionUID = 5974102306797353902L;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+  private static final long serialVersionUID = 5974102306797353902L;
 
-    @Column(name = "first_name", nullable = false)
-    private String firstName;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private long id;
 
-    @Column(name = "last_name", nullable = false)
-    private String lastName;
+  @Column(name = "first_name", nullable = false)
+  private String firstName;
 
-    @Column(nullable = false)
-    private String title;
+  @Column(name = "last_name", nullable = false)
+  private String lastName;
 
-    @Column
-    private String image;
+  @Column(nullable = false)
+  private String title;
 
-    @Column(nullable = false)
-    private String motto;
+  @Column
+  private String image;
 
-    @OneToMany(mappedBy = "employee")
-    private List<Skill> skills = new ArrayList<Skill>();
+  @Column(nullable = false)
+  private String motto;
 
-    @OneToMany(mappedBy = "employee")
-    private List<Project> projects = new ArrayList<Project>();
+  @OneToMany(mappedBy = "employee")
+  private List<Skill> skills = new ArrayList<Skill>();
 
-    protected Employee() {}
+  @OneToMany(mappedBy = "employee")
+  private List<Project> projects = new ArrayList<Project>();
 
-    public long getId() {
-        return id;
-    }
+  protected Employee() {
+  }
 
-    public void setId(long id) {
-        this.id = id;
-    }
+  public long getId() {
+    return id;
+  }
 
-    public String getFirstName() {
-        return firstName;
-    }
+  public void setId(long id) {
+    this.id = id;
+  }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
+  public String getFirstName() {
+    return firstName;
+  }
 
-    public String getLastName() {
-        return lastName;
-    }
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+  public String getLastName() {
+    return lastName;
+  }
 
-    public String getTitle() {
-        return title;
-    }
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
+  }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+  public String getTitle() {
+    return title;
+  }
 
-    public String getImage() {
-        return image;
-    }
+  public void setTitle(String title) {
+    this.title = title;
+  }
 
-    public void setImage(String image) {
-        this.image = image;
-    }
+  public String getImage() {
+    return image;
+  }
 
-    public String getMotto() {
-        return motto;
-    }
+  public void setImage(String image) {
+    this.image = image;
+  }
 
-    public void setMotto(String motto) {
-        this.motto = motto;
-    }
+  public String getMotto() {
+    return motto;
+  }
 
-    public List<Skill> getSkills() {
-        return skills;
-    }
+  public void setMotto(String motto) {
+    this.motto = motto;
+  }
 
-    public void setSkills(List<Skill> skills) {
-        this.skills = skills;
-    }
+  public List<Skill> getSkills() {
+    return skills;
+  }
 
-    public List<Project> getProjects() {
-        return projects;
-    }
+  public void setSkills(List<Skill> skills) {
+    this.skills = skills;
+  }
 
-    public void setProjects(List<Project> projects) {
-        this.projects = projects;
-    }
+  public List<Project> getProjects() {
+    return projects;
+  }
+
+  public void setProjects(List<Project> projects) {
+    this.projects = projects;
+  }
 }
 

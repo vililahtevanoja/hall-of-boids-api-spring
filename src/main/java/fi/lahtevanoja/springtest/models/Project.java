@@ -1,10 +1,8 @@
 package fi.lahtevanoja.springtest.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-
 import java.io.Serializable;
 import java.sql.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,68 +13,70 @@ import javax.persistence.ManyToOne;
 
 @Entity
 public class Project implements Serializable {
-    private static final long serialVersionUID = 5680633555943627948L;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+  private static final long serialVersionUID = 5680633555943627948L;
 
-    @ManyToOne
-    @JoinColumn(name = "employee_id")
-    @JsonBackReference
-    private Employee employee;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private long id;
 
-    @Column
-    private String client;
+  @ManyToOne
+  @JoinColumn(name = "employee_id")
+  @JsonBackReference
+  private Employee employee;
 
-    @Column
-    private String description;
+  @Column
+  private String client;
 
-    @Column(name = "duration_from")
-    private Date durationFrom;
+  @Column
+  private String description;
 
-    @Column(name = "duration_to")
-    private Date durationTo;
+  @Column(name = "duration_from")
+  private Date durationFrom;
 
-    protected Project() {}
+  @Column(name = "duration_to")
+  private Date durationTo;
 
-    public String getClient() {
-        return client;
-    }
+  protected Project() {
+  }
 
-    public void setClient(String client) {
-        this.client = client;
-    }
+  public String getClient() {
+    return client;
+  }
 
-    public String getDescription() {
-        return description;
-    }
+  public void setClient(String client) {
+    this.client = client;
+  }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+  public String getDescription() {
+    return description;
+  }
 
-    public Date getDurationFrom() {
-        return durationFrom;
-    }
+  public void setDescription(String description) {
+    this.description = description;
+  }
 
-    public void setDurationFrom(Date durationFrom) {
-        this.durationFrom = durationFrom;
-    }
+  public Date getDurationFrom() {
+    return durationFrom;
+  }
 
-    public Date getDurationTo() {
-        return durationTo;
-    }
+  public void setDurationFrom(Date durationFrom) {
+    this.durationFrom = durationFrom;
+  }
 
-    public void setDurationTo(Date durationTo) {
-        this.durationTo = durationTo;
-    }
+  public Date getDurationTo() {
+    return durationTo;
+  }
 
-    public Employee getEmployee() {
-        return employee;
-    }
+  public void setDurationTo(Date durationTo) {
+    this.durationTo = durationTo;
+  }
 
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
-    }
+  public Employee getEmployee() {
+    return employee;
+  }
+
+  public void setEmployee(Employee employee) {
+    this.employee = employee;
+  }
 }
