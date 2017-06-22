@@ -1,4 +1,4 @@
-package fi.lahtevanoja.springtest.card;
+package fi.lahtevanoja.hallofboids.card;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.collect.Lists;

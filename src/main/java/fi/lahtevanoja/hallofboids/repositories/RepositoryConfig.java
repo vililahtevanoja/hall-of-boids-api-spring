@@ -1,8 +1,8 @@
-package fi.lahtevanoja.springtest.repositories;
+package fi.lahtevanoja.hallofboids.repositories;
 
-import fi.lahtevanoja.springtest.models.Employee;
-import fi.lahtevanoja.springtest.models.Project;
-import fi.lahtevanoja.springtest.models.Skill;
+import fi.lahtevanoja.hallofboids.models.Employee;
+import fi.lahtevanoja.hallofboids.models.Project;
+import fi.lahtevanoja.hallofboids.models.Skill;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurerAdapter;

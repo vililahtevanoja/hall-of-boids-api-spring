@@ -1,4 +1,4 @@
-package fi.lahtevanoja.springtest.models;
+package fi.lahtevanoja.hallofboids.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.io.Serializable;

@@ -1,4 +1,4 @@
-package fi.lahtevanoja.springtest;
+package fi.lahtevanoja.hallofboids;
 
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.context.annotation.Configuration;

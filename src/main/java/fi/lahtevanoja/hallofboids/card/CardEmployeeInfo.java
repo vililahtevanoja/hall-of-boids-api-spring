@@ -1,7 +1,7 @@
-package fi.lahtevanoja.springtest.card;
+package fi.lahtevanoja.hallofboids.card;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import fi.lahtevanoja.springtest.models.Employee;
+import fi.lahtevanoja.hallofboids.models.Employee;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

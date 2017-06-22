@@ -1,9 +1,9 @@
-package fi.lahtevanoja.springtest.controllers;
+package fi.lahtevanoja.hallofboids.controllers;
 
-import fi.lahtevanoja.springtest.card.Card;
-import fi.lahtevanoja.springtest.card.CardBuilder;
-import fi.lahtevanoja.springtest.card.CardsResponse;
-import fi.lahtevanoja.springtest.repositories.EmployeeRepository;
+import fi.lahtevanoja.hallofboids.card.Card;
+import fi.lahtevanoja.hallofboids.card.CardBuilder;
+import fi.lahtevanoja.hallofboids.card.CardsResponse;
+import fi.lahtevanoja.hallofboids.repositories.EmployeeRepository;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;

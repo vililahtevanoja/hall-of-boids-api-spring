@@ -1,11 +1,11 @@
-package fi.lahtevanoja.springtest.card;
+package fi.lahtevanoja.hallofboids.card;
 
-import fi.lahtevanoja.springtest.models.Employee;
-import fi.lahtevanoja.springtest.models.Project;
-import fi.lahtevanoja.springtest.models.Skill;
-import fi.lahtevanoja.springtest.repositories.EmployeeRepository;
-import fi.lahtevanoja.springtest.repositories.ProjectRepository;
-import fi.lahtevanoja.springtest.repositories.SkillRepository;
+import fi.lahtevanoja.hallofboids.models.Employee;
+import fi.lahtevanoja.hallofboids.models.Project;
+import fi.lahtevanoja.hallofboids.models.Skill;
+import fi.lahtevanoja.hallofboids.repositories.EmployeeRepository;
+import fi.lahtevanoja.hallofboids.repositories.ProjectRepository;
+import fi.lahtevanoja.hallofboids.repositories.SkillRepository;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.joda.time.DateTime;

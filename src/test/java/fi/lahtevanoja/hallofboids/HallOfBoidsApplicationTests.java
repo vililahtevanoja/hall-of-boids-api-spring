@@ -1,4 +1,4 @@
-package fi.lahtevanoja.springtest;
+package fi.lahtevanoja.hallofboids;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

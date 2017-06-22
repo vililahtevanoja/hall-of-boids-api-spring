@@ -1,6 +1,6 @@
-package fi.lahtevanoja.springtest.repositories;
+package fi.lahtevanoja.hallofboids.repositories;
 
-import fi.lahtevanoja.springtest.models.Employee;
+import fi.lahtevanoja.hallofboids.models.Employee;
 import java.util.List;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;

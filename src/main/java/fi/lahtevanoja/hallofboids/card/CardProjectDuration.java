@@ -1,7 +1,6 @@
-package fi.lahtevanoja.springtest.card;
+package fi.lahtevanoja.hallofboids.card;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import fi.lahtevanoja.springtest.models.Skill;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -13,15 +12,12 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 @EqualsAndHashCode
-public class CardSkill {
+public class CardProjectDuration {
 
   @JsonProperty
-  private String name;
+  private long from;
 
   @JsonProperty
-  private int rating;
+  private long to;
 
-  public static CardSkill fromSkill(Skill skill) {
-    return new CardSkill(skill.getName(), skill.getRating());
-  }
 }
