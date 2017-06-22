@@ -1,5 +1,6 @@
 package fi.lahtevanoja.springtest;
 
+import fi.lahtevanoja.springtest.controllers.CardController;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.json.JsonTest;

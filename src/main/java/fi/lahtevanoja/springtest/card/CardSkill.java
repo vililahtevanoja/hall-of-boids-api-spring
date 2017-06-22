@@ -1,40 +1,27 @@
 package fi.lahtevanoja.springtest.card;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import fi.lahtevanoja.springtest.models.Skill;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 
+@Data
+@RequiredArgsConstructor
+@AllArgsConstructor
+@ToString
+@EqualsAndHashCode
 public class CardSkill {
 
+  @JsonProperty
   private String name;
+
+  @JsonProperty
   private int rating;
 
-  CardSkill(String name, int rating) {
-    this.name = name;
-    this.rating = rating;
-  }
-
-  CardSkill(Skill skill) {
-    this.name = skill.getName();
-    this.rating = skill.getRating();
-  }
-
-  CardSkill() {
-    this.name = "";
-    this.rating = 0;
-  }
-
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public int getRating() {
-    return rating;
-  }
-
-  public void setRating(int rating) {
-    this.rating = rating;
+  public static CardSkill fromSkill(Skill skill) {
+    return new CardSkill(skill.getName(), skill.getRating());
   }
 }

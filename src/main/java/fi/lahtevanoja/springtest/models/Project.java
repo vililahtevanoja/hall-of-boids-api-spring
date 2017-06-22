@@ -10,8 +10,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import lombok.Data;
 
+@Data
 @Entity
+@Table(name = "projects")
 public class Project implements Serializable {
 
   private static final long serialVersionUID = 5680633555943627948L;
@@ -37,46 +41,4 @@ public class Project implements Serializable {
   @Column(name = "duration_to")
   private Date durationTo;
 
-  protected Project() {
-  }
-
-  public String getClient() {
-    return client;
-  }
-
-  public void setClient(String client) {
-    this.client = client;
-  }
-
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
-  public Date getDurationFrom() {
-    return durationFrom;
-  }
-
-  public void setDurationFrom(Date durationFrom) {
-    this.durationFrom = durationFrom;
-  }
-
-  public Date getDurationTo() {
-    return durationTo;
-  }
-
-  public void setDurationTo(Date durationTo) {
-    this.durationTo = durationTo;
-  }
-
-  public Employee getEmployee() {
-    return employee;
-  }
-
-  public void setEmployee(Employee employee) {
-    this.employee = employee;
-  }
 }

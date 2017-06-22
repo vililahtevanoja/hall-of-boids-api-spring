@@ -1,0 +1,29 @@
+spring:
+  main:
+    banner-mode: "off"
+
+  http.encoding:
+    charset: UTF-8
+    enabled: true
+    force: true
+
+  mvc:
+    dispatch-options-request: true
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/spring_test
+    username: testuser
+    password: daadirlandirlandaa
+    driver-class-name: org.postgresql.Driver
+    platform: postgres
+
+  jpa:
+    database: POSTGRESQL
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+
+server:
+  contextPath: /api
+  port: ${PORT:3333}
+  max-http-header-size: 16384

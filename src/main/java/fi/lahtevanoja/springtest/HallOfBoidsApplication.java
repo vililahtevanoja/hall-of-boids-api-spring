@@ -1,12 +1,14 @@
 package fi.lahtevanoja.springtest;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringtestApplication {
+@EnableAutoConfiguration
+public class HallOfBoidsApplication {
 
   public static void main(String[] args) {
-    SpringApplication.run(SpringtestApplication.class, args);
+    SpringApplication.run(HallOfBoidsApplication.class, args);
   }
 }

@@ -1,5 +1,6 @@
 package fi.lahtevanoja.springtest.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,8 +10,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import lombok.Data;
 
+@Data
 @Entity
+@Table(name = "employees")
 public class Employee implements Serializable {
 
   private static final long serialVersionUID = 5974102306797353902L;
@@ -19,9 +24,11 @@ public class Employee implements Serializable {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
 
+  @JsonProperty("firstname")
   @Column(name = "first_name", nullable = false)
   private String firstName;
 
+  @JsonProperty("lastname")
   @Column(name = "last_name", nullable = false)
   private String lastName;
 
@@ -40,71 +47,5 @@ public class Employee implements Serializable {
   @OneToMany(mappedBy = "employee")
   private List<Project> projects = new ArrayList<Project>();
 
-  protected Employee() {
-  }
-
-  public long getId() {
-    return id;
-  }
-
-  public void setId(long id) {
-    this.id = id;
-  }
-
-  public String getFirstName() {
-    return firstName;
-  }
-
-  public void setFirstName(String firstName) {
-    this.firstName = firstName;
-  }
-
-  public String getLastName() {
-    return lastName;
-  }
-
-  public void setLastName(String lastName) {
-    this.lastName = lastName;
-  }
-
-  public String getTitle() {
-    return title;
-  }
-
-  public void setTitle(String title) {
-    this.title = title;
-  }
-
-  public String getImage() {
-    return image;
-  }
-
-  public void setImage(String image) {
-    this.image = image;
-  }
-
-  public String getMotto() {
-    return motto;
-  }
-
-  public void setMotto(String motto) {
-    this.motto = motto;
-  }
-
-  public List<Skill> getSkills() {
-    return skills;
-  }
-
-  public void setSkills(List<Skill> skills) {
-    this.skills = skills;
-  }
-
-  public List<Project> getProjects() {
-    return projects;
-  }
-
-  public void setProjects(List<Project> projects) {
-    this.projects = projects;
-  }
 }
 

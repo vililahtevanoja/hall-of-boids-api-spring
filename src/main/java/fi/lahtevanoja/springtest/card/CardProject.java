@@ -1,72 +1,42 @@
 package fi.lahtevanoja.springtest.card;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import fi.lahtevanoja.springtest.models.Project;
-import java.util.Date;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.RequiredArgsConstructor;
+import lombok.ToString;
+import org.joda.time.DateTime;
 
-/**
- * Created on 2017-04-25.
- *
- * @author vili
- */
+@Data
+@RequiredArgsConstructor
+@AllArgsConstructor
+@ToString
+@EqualsAndHashCode
 public class CardProject {
 
+  @JsonProperty
   private String client;
+
+  @JsonProperty
   private String description;
+
+  @JsonProperty
   private CardProjectDuration duration;
+
+  @JsonProperty
   private boolean current;
 
-  CardProject() {
-    this.client = "";
-    this.description = "";
-    this.duration = new CardProjectDuration(0, 0);
-    this.current = false;
-  }
+  public static CardProject fromProject(Project project) {
+    String client = project.getClient();
+    String description = project.getDescription();
+    CardProjectDuration duration = new CardProjectDuration(project.getDurationFrom().getTime(),
+        project.getDurationTo().getTime());
+    long now = DateTime.now().getMillis();
+    boolean isCurrent =
+        project.getDurationFrom().getTime() < now && project.getDurationTo().getTime() > now;
 
-  CardProject(Project project) {
-    this.client = project.getClient();
-    this.description = project.getDescription();
-    this.duration = new CardProjectDuration(project.getDurationFrom(), project.getDurationTo());
-    long now = new Date().getTime();
-    this.current = (now > this.duration.getFrom()) && (now < this.duration.getTo());
-  }
-
-  CardProject(String client, String description, long durationFrom, long durationTo) {
-    this.client = client;
-    this.description = description;
-    this.duration = new CardProjectDuration(durationFrom, durationTo);
-    long now = new Date().getTime();
-    this.current = (now > durationFrom) && (now < durationTo);
-  }
-
-  public String getClient() {
-    return client;
-  }
-
-  public void setClient(String client) {
-    this.client = client;
-  }
-
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
-  public CardProjectDuration getDuration() {
-    return duration;
-  }
-
-  public void setDuration(CardProjectDuration duration) {
-    this.duration = duration;
-  }
-
-  public boolean isCurrent() {
-    return current;
-  }
-
-  public void setCurrent(boolean current) {
-    this.current = current;
+    return new CardProject(client, description, duration, isCurrent);
   }
 }
